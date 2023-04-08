@@ -1,8 +1,6 @@
 import asyncio
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import random
 from mastodon import Mastodon, MastodonNotFoundError, MastodonRatelimitError, StreamListener
 import csv, os, time, json
 
@@ -19,24 +17,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-@app.get('/')
-async def root():
-    return {'example': 'this is an example', 'data': 0}
-
-@app.get('/random')
-async def get_random():
-    rn:int = random.randint(0,100)
-    return {'number': rn, 'limit': 100}
-
-@app.get('/random/{limit}')
-async def get_random(limit:int):
-    rn:int = random.randint(0,limit)
-    return {'number': rn, 'limit': limit}
-
 mastodon = {"username": "", "content":'', "url":""}
-@app.get('/mastodon')
-async def get_mastodon():
-    return mastodon
 
 m = Mastodon(
         api_base_url=f'https://mastodon.world',
@@ -59,6 +40,15 @@ async def start_mastodon_stream():
         except (MastodonNotFoundError, MastodonRatelimitError) as e:
             print(f"Error: {e}")
             await asyncio.sleep(60)  # Wait 60 seconds before retrying
+
+
+@app.get('/')
+async def root():
+    return {'example': 'this is an example', 'data': 0}
+
+@app.get('/mastodon')
+async def get_mastodon():
+    return mastodon
 
 @app.on_event("startup")
 async def start_streaming():

@@ -27,4 +27,13 @@ sudo ln -s /etc/nginx/sites-available/react /etc/nginx/sites-enabled/
 # Restart Nginx
 sudo systemctl restart nginx
 
+pm2 restart "React"
+
+# install library for backend
+sudo apt install python3-pip
+pip install fastapi 
+pip install uvicorn
+pip install decorator
+export PATH="/home/ubuntu/.local/lib/python3.10/site-packages:$PATH"
+
 

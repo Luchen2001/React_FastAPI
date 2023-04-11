@@ -6,8 +6,7 @@ function App() {
   const [text, setText] = useState('')
   const fetchData = async () => {
     //const response = await fetch("http://localhost:8000/mastodon")
-    //const response = await fetch("http://172.26.132.211:8000/mastodon");
-    const response = await fetch("/api/mastodon");
+    const response = await fetch("http://172.26.132.211:8000/mastodon");
     const data = await response.json()
     setText(data)
     console.log(data)

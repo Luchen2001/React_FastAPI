@@ -31,6 +31,7 @@ sudo systemctl restart nginx
 pm2 restart "React"
 
 # install library for backend
+cd ~/React_FastAPI/fastapi-react/backend
 sudo apt install python3-pip
 pip install fastapi 
 pip install --user uvicorn

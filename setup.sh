@@ -35,6 +35,7 @@ cd ~/React_FastAPI/fastapi-react/backend
 sudo apt install python3-pip
 pip install fastapi 
 pip install --user uvicorn
+python3 -m site --user-base
 export PATH="/home/ubuntu/.local/bin:$PATH"
 pip install decorator
 

@@ -1,6 +1,6 @@
 # How to run
 
-1. change all of the IP address in the scripts
+## change all of the IP address in the scripts
 
 cd ~/React_FastAPI
 
@@ -14,7 +14,7 @@ cd ~/React_FastAPI/fastapi-react/backend
 
 vim fastapi_server.py
 
-2. match the path (*), log into secret key and run 
+## match the path (*), log into secret key and run 
 
 cd ~/React_FastAPI/fastapi-react/backend
 

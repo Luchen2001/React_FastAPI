@@ -14,6 +14,12 @@ cd ~/React_FastAPI/fastapi-react/backend
 
 vim fastapi_server.py
 
+## run the sh script to setup frontend server and install the libraries
+
+cd ~/React_FastAPI
+
+bash setup.sh
+
 ## match the path (*), log into secret key and run 
 
 cd ~/React_FastAPI/fastapi-react/backend

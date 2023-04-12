@@ -44,6 +44,6 @@ source ~/.bashrc
 pip install decorator
 
 #navigate to backend
-cd ~/React_FastAPI/fastapi-react/backend$
+cd ~/React_FastAPI/fastapi-react/backend
 . ./secrets.sh
 

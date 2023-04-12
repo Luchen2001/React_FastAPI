@@ -18,6 +18,7 @@ pm2 start npm --name "React" -- start
 pm2 startup systemd
 
 # Copy Nginx configuration
+cd ~/React_FastAPI
 nginx_config_file="/etc/nginx/sites-available/react"
 sudo cp nginx_react_config "$nginx_config_file"
 
